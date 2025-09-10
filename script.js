@@ -1,3 +1,7 @@
+//Dato un array di oggetti rappresentante un team di un’azienda, creare una pagina dedicata  in cui mostrare una card per ciascun componente.
+
+
+
 const teamMembers = [
   {
     name: "Marco Bianchi",
@@ -36,3 +40,36 @@ const teamMembers = [
     img: "img/female3.png"
   }
 ];
+
+//richiamiamo dal DOM il container delle cards
+const contenitore = document.querySelector(".d-flex");
+
+//creo una variabile che contenga le carte nella pagina
+let cards = "";
+
+//ciclo for per scorrere l'array teamMembers
+for (let i = 0; i < teamMembers.length; i++) {
+  const member = teamMembers[i];
+  console.log(member);
+  
+  //per ogni elemento dell'array creo una card singola tramite la variabile contenitore (cards)
+  cards+=`<div class="card mb-3 col-4" style="max-width: 540px;">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="${member.img}" class="img-fluid rounded-start" alt="${member.nome}">
+                </div>
+            <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title">${member.name}</h5>
+                <p class="card-text">${member.role}</p>
+                <p class="card-text"><small class="text-body-secondary">${member.email}</small></p>
+            </div>
+            </div>
+        </div>
+        </div>`;
+}
+//stamp in console per prova
+// console.log(cards);
+
+//stampa delle card in pagina complete di oggetti
+contenitore.innerHTML = cards;
