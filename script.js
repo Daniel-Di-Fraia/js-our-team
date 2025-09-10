@@ -53,16 +53,16 @@ for (let i = 0; i < teamMembers.length; i++) {
   console.log(member);
   
   //per ogni elemento dell'array creo una card singola tramite la variabile contenitore (cards)
-  cards+=`<div class="card mb-3 col-4" style="max-width: 540px;">
+  cards+=`<div class="card mb-3 col-3" style="max-width: 540px;">
             <div class="row g-0">
                 <div class="col-md-4">
-                    <img src="${member.img}" class="img-fluid rounded-start" alt="${member.nome}">
+                    <img src="${member.img}" class=" img-fluid rounded-start" alt="${member.nome}">
                 </div>
-            <div class="col-md-8">
+            <div class="col-md-8 text-bg-dark">
             <div class="card-body">
                 <h5 class="card-title">${member.name}</h5>
                 <p class="card-text">${member.role}</p>
-                <p class="card-text"><small class="text-body-secondary">${member.email}</small></p>
+                <p class="card-text text-info" "text-body-secondary">${member.email}</p>
             </div>
             </div>
         </div>
